@@ -1,6 +1,3 @@
-choices = ["rock","paper","scissors"];
-score = 0;
-
 function computerPlay() {
     index = Math.floor(Math.random()*choices.length);
     return choices[index];
@@ -12,13 +9,13 @@ function promptChoice() {
     if (choices.includes(choice)) {
         return choice
     } else {
-        console.log("Check your spelling")   
+        console.error("Check your spelling");   
     };
 };
 
 function playRound() {
     computerChoice = computerPlay();
-    playerChoice = promptChoice(); //Replace for promptChoice
+    playerChoice = promptChoice(); 
     if (playerChoice == computerChoice ) {
         console.log(`It's a tie. Both selected ${playerChoice}`);
     } else {
@@ -26,20 +23,6 @@ function playRound() {
     };
 
 };
-
-function winRound() {
-    score++;
-    console.log("You win");
-    
-};
-
-function loseRound() {
-    score--;
-    console.log("You lose");
-    
-};
-
-
 
 function choiceComparisor(choice1,choice2) {
     if (choice1=="rock") {
@@ -51,5 +34,41 @@ function choiceComparisor(choice1,choice2) {
     else if (choice1 == "scissors") {
     choice2 == "rock"? loseRound(): winRound();
     };
-    console.log(score);
+};
+
+function winRound() {
+    playerScore++;
+    console.log("You win");
+    
+};
+
+function loseRound() {
+    computerScore++;
+    console.log("You lose");
+    
+
+    
+};
+
+
+
+
+
+
+function game() {
+    choices = ["rock","paper","scissors"];
+    playerScore = 0;
+    computerScore = 0
+
+    for (let i = 0; i < 5; i++) {
+        playRound();
+        console.log(`Score: You: ${playerScore} PC: ${computerScore}`);
+    };
+    if (playerScore > computerScore) {
+        console.log("YOU WIN!! :)")
+    } else {
+        console.log("YOU LOSE! :(")
+        
+    }
+    
 }
