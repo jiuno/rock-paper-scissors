@@ -6,13 +6,17 @@ function computerPlay() {
     return choices[index];
 };
 
-function playerChoice() {
-    
-}
+function promptChoice() {
+    choice = (prompt("Choose rock, paper or scissors.").toLowerCase());
+    if (choices.includes(choice)) {
+        return choice
+    } else {
+        console.log("Check your spelling")
+    }
 
 function playRound() {
     computerChoice = computerPlay();
-    playerChoice = "rock"; //Replace for playerChoice
+    playerChoice = promptChoice(); //Replace for promptChoice
     if (playerChoice == computerChoice ) {
         console.log(`It's a tie. Both selected ${playerChoice}`);
     } else {
