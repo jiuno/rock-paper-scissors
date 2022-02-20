@@ -19,12 +19,12 @@ function playRound() {
     if (playerChoice == computerChoice ) {
         console.log(`It's a tie. Both selected ${playerChoice}`);
     } else {
-        choiceComparisor(playerChoice,computerChoice);
+        compareChoices(playerChoice,computerChoice);
     };
 
 };
 
-function choiceComparisor(choice1,choice2) {
+function compareChoices(choice1,choice2) {
     if (choice1=="rock") {
     choice2 == "paper" ? loseRound(): winRound();    
     } 
