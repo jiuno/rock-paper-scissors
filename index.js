@@ -1,5 +1,5 @@
-choices = ["rock","paper","scissors"]
-score = 0
+choices = ["rock","paper","scissors"];
+score = 0;
 
 function computerPlay() {
     index = Math.floor(Math.random()*choices.length);
@@ -7,12 +7,14 @@ function computerPlay() {
 };
 
 function promptChoice() {
-    choice = (prompt("Choose rock, paper or scissors.").toLowerCase());
+    choiceRaw = prompt("Choose rock, paper or scissors.");
+    choice = choiceRaw.toLowerCase();
     if (choices.includes(choice)) {
         return choice
     } else {
-        console.log("Check your spelling")
-    }
+        console.log("Check your spelling")   
+    };
+};
 
 function playRound() {
     computerChoice = computerPlay();
@@ -51,7 +53,3 @@ function choiceComparisor(choice1,choice2) {
     };
     console.log(score);
 }
-
-
-
-
