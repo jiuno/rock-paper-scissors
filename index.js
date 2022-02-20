@@ -1,4 +1,5 @@
 choices = ["rock","paper","scissors"]
+score = 0
 
 function computerPlay() {
     index = Math.floor(Math.random()*choices.length);
@@ -11,8 +12,7 @@ function playerChoice() {
 
 function playRound() {
     computerChoice = computerPlay();
-    playerChoice = playerChoice();
-    score = 0
+    playerChoice = "rock"; //Replace for playerChoice
     if (playerChoice == computerChoice ) {
         console.log(`It's a tie. Both selected ${playerChoice}`);
     } else {
@@ -36,7 +36,6 @@ function loseRound() {
 
 
 function choiceComparisor(choice1,choice2) {
-    score = 0
     if (choice1=="rock") {
     choice2 == "paper" ? loseRound(): winRound();    
     } 
